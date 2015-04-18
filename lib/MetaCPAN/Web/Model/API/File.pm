@@ -25,11 +25,7 @@ sub dir {
                             { term => { 'file.level'   => scalar @path } },
                             { term => { 'file.author'  => $author } },
                             { term => { 'file.release' => $release } },
-                            {
-                                prefix => {
-                                    'file.path' => join( q{/}, @path, q{} )
-                                }
-                            },
+                            { term => { 'file.dir' => join( q{/}, @path }}
                         ]
                     },
                 }
